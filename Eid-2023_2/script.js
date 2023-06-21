@@ -1,9 +1,28 @@
 // script.js
+function reloadPage(){
+  location.reload();
+}
+
 function YourName() {
   var name = prompt("Enter your name:");
   if (name) {
-      var message = document.getElementById("Main-message");
-      message.innerHTML = 'Wishing from <span class="name"><br>'+ name + "</span><br> Many many Returns of the day! <br><span class=b_day> Happy Birthday To You! <span>";
+    var message = document.getElementById("Main-message");
+    message.innerHTML = 'Wishing from <span class="name"><br>'+ name + "</span><br> Many Many Happy Returns of the day! <br><span class=b_day><span id='birthdayText'></span><span>";
+   
+    // Typed text
+    var birthdayText = document.getElementById("birthdayText");
+    var text = "Happy Birthday To You!";
+    var typingSpeed = 70; // Adjust the typing speed (in milliseconds)
+    var index = 0;
+
+    function typeText() {
+      birthdayText.textContent += text[index];
+      index++;
+      if (index < text.length) {
+        setTimeout(typeText, typingSpeed);
+      }
+    }
+    setTimeout(typeText, 1000); // Start typing animation after a delay
   }
 }
 
@@ -13,7 +32,7 @@ function FrndName() {
   if (fname) {
     friend.push(fname);
     updateMessage();
-}
+  }
 }
 
 function updateMessage(){
