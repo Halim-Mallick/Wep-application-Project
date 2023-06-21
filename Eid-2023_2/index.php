@@ -8,12 +8,15 @@
     </style>
 </head>
 <body>
-    <div class="container">
+<div class="header">
+        <button onclick="reloadPage()">Reload</button>
+</div>
+<div class="container">
         <h1>Birthday Greetings!</h1>
         <p id="Main-message">You can wish your friend by your name.</p>
         <button onclick="YourName()">Enter Your Name</button>
         <button onclick="FrndName()">Enter Friend Name</button>
-    </div>
+</div>
 
     <script src="script.js"></script>
 </body>
